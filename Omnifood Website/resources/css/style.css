@@ -1,0 +1,639 @@
+  /* COLORS USED  */
+
+  /*
+  WHITE - #fff
+  ORANGE - #e67e22
+  DARK ORANGE - #cf6d17
+  */
+
+  /* ------------------------------------------------ */
+  /* BASIC SETUP */
+  /* ------------------------------------------------ */
+
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    font-family: "Lato", "Arial", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #555;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ------------------------------------------------ */
+  /* REUSABLE CODE */
+  /* ------------------------------------------------ */
+
+  .row {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .box {
+    padding: 1%;
+  }
+
+  .clearfix {
+    zoom: 1;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+
+  /* ------------------------------------------------ */
+  /* HEADINGS */
+  /* ------------------------------------------------ */
+
+  h1,
+  h2,
+  h3 {
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  h1 {
+    color: #fff;
+    word-spacing: 4px;
+    font-size: 240%;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 180%;
+    margin-bottom: 30px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+  }
+
+  h2::after {
+    display: block;
+    width: 100px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #e67e22;
+    content: "";
+    margin-top: 30px;
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    font-size: 110%;
+  }
+
+  /* ------------------------------------------------ */
+  /* ICONS   */
+  /* ------------------------------------------------ */
+
+  .icon-big {
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+  }
+
+  .icon-small {
+    width: 30px;
+    text-align: center;
+    vertical-align: middle;
+    color: #e67e22;
+    margin-top: -5px;
+  }
+
+  .icon-heart {
+    color: red;
+  }
+
+  /* ------------------------------------------------ */
+  /* BUTTONS */
+  /* ------------------------------------------------ */
+
+  .btn:link,
+  .btn:visited,
+  input[type=submit] {
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 10px 30px;
+    border-radius: 100px;
+    border: solid 1px #e67e22;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+  }
+
+  .btn-pri:link,
+  .btn-pri:visited,
+  input[type=submit] {
+    color: #fff;
+    background-color: #e67e22;
+  }
+
+  .btn-sec:link,
+  .btn-sec:visited {
+    color: #e67e22;
+  }
+
+  .btn:hover,
+  .btn:active,
+  input[type=submit]:hover,
+  input[type=submit]:active {
+    background-color: #cf6d17;
+    border: solid 1px #cf6d17;
+  }
+
+  .btn-sec:active,
+  .btn-sec:hover {
+    color: #fff;
+  }
+
+  /* ------------------------------------------------ */
+  /* HEADER */
+  /* ------------------------------------------------ */
+
+  header {
+    height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))),
+      url("images/hero-min.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("images/hero-min.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .hero-text-box {
+    width: 1140px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  /* ------------------------------------------------ */
+  /* NAVIGATION BAR */
+  /* ------------------------------------------------ */
+
+  .logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+  }
+
+  .logo-black {
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+    display: none;
+  }
+
+  .main-nav {
+    list-style: none;
+    float: right;
+    margin-top: 55px;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+  }
+
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    color: #fff;
+    font-size: 90%;
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+    padding: 2px 0;
+  }
+
+  .main-nav li a:hover,
+  .main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+  }
+
+
+  /* ------------------------------------------------ */
+  /* STICKY NAVIGATION BAR */
+  /* ------------------------------------------------ */
+
+  .sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999;
+  }
+
+  .sticky .main-nav li a:link,
+  .sticky .main-nav li a:visited {
+    color: #555;
+    padding: 17px 0;
+  }
+
+  .sticky .main-nav li a:hover,
+  .sticky .main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+  }
+
+  .sticky .main-nav {
+    margin-top: 20px;
+  }
+
+
+  .sticky .logo {
+    display: none;
+  }
+
+  .sticky .logo-black {
+    display: block;
+  }
+
+
+  /* ------------------------------------------------ */
+  /* Section-1 Features */
+  /* ------------------------------------------------ */
+
+  .long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .section-features .long-copy {
+    margin-bottom: 30px;
+  }
+
+  .box p {
+    font-size: 90%;
+    line-height: 145%;
+  }
+
+  /* ------------------------------------------------ */
+  /* Section-2 Meals */
+  /* ------------------------------------------------ */
+
+  .section-meals {
+    padding: 0;
+  }
+
+  .showcase {
+    list-style: none;
+    width: 100%;
+  }
+
+  .showcase li {
+    display: block;
+    width: 25%;
+    float: left;
+  }
+
+  .meals-img {
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+  }
+
+  .meals-img img {
+    width: 100%;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0.7;
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+  }
+
+  .meals-img img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  /* ------------------------------------------------ */
+  /* Section-3 How It Works */
+  /* ------------------------------------------------ */
+
+  .section-works {
+    background-color: #f4f4f4;
+  }
+
+  .steps-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+  }
+
+  .steps-box:last-child {
+    text-align: left;
+    padding-left: 3%;
+    margin-top: 70px;
+  }
+
+  .app-screen {
+    width: 40%;
+  }
+
+  .work-steps {
+    margin-bottom: 50px;
+  }
+
+  .work-steps:last-of-type {
+    margin-bottom: 80px;
+  }
+
+  .work-steps div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    padding: 5px;
+    font-size: 150%;
+    text-align: center;
+    float: left;
+    margin-right: 25px;
+  }
+
+  .steps-box a img {
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  /* ------------------------------------------------ */
+  /* Section-4 Cities */
+  /* ------------------------------------------------ */
+
+  .box img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .city-feature {
+    margin-bottom: 5px;
+  }
+
+  .city-feature a:link,
+  .city-feature a:visited {
+    text-decoration: none;
+    color: #e67e22;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 2px;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+  }
+
+  .city-feature a:hover,
+  .city-feature a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+  }
+
+  /* ------------------------------------------------ */
+  /* Section-5 Customers  */
+  /* ------------------------------------------------ */
+  .section-customers {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
+      url(images/back-customers-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(images/back-customers-min.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+  }
+
+  blockquote {
+    line-height: 145%;
+    padding: 2%;
+    font-style: italic;
+    position: relative;
+  }
+
+  blockquote::before {
+    content: "\201C";
+    display: block;
+    font-size: 400%;
+    position: absolute;
+    left: -5px;
+    top: -10px;
+  }
+
+  cite {
+    display: block;
+    margin-top: 25px;
+    font-size: 90%;
+  }
+
+  cite img {
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  /* ------------------------------------------------ */
+  /* Section-6 Sign Up  */
+  /* ------------------------------------------------ */
+
+  .section-SignUp {
+    background-color: #f4f4f4;
+  }
+
+  .price-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    -webkit-box-shadow: 0 2px 2px #efefef;
+    box-shadow: 0 2px 2px #efefef;
+  }
+
+  .price-box div:first-child {
+    background-color: #fcfcfc;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .price-box div:last-child {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .price-box div {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .price-plan {
+    font-size: 300%;
+    color: #e67e22;
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
+
+  .price-plan span {
+    font-size: 30%;
+    font-weight: 300;
+  }
+
+  .price-plan-meal {
+    font-size: 80%;
+  }
+
+  .price-box div ul {
+    list-style: none;
+  }
+
+  .price-box div ul li {
+    padding: 5px 0;
+  }
+
+  /* ------------------------------------------------ */
+  /* Section-7 Contact Form  */
+  /* ------------------------------------------------ */
+
+  .form {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  input[type=text],
+  input[type=email],
+  textarea,
+  select {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  input[type=checkbox] {
+    margin: 10px 5px 10px 0;
+  }
+
+  *:focus {
+    outline: none;
+  }
+
+  /* ------------------------------------------------ */
+  /* Footer */
+  /* ------------------------------------------------ */
+
+  footer {
+    background-color: #333;
+    padding: 30px 0 20px 0;
+    color: rgb(105, 105, 105);
+  }
+
+  .footer-nav {
+    list-style: none;
+
+  }
+
+  .nav-2 {
+    text-align: right;
+    font-size: 120%;
+  }
+
+  .footer-nav li {
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  .footer-nav li:last-child {
+    margin-right: 0;
+  }
+
+  .footer-nav li a:link,
+  .footer-nav li a:visited {
+
+    text-decoration: none;
+    color: rgb(105, 105, 105);
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+
+  }
+
+  .nav-1 li a:active,
+  .nav-1 li a:hover {
+
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+
+  }
+
+  .fb:hover,
+  .fb:active {
+    color: #3b5998;
+  }
+
+  .twitter:hover,
+  .twitter:active {
+    color: #55acee;
+  }
+
+  .gplus:hover,
+  .gplus:active {
+    color: #dd4b39;
+  }
+
+  .insta:hover,
+  .insta:active {
+    color: #bc2a8d;
+  }
+
+  .footer-para {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .footer-para p {
+    padding-bottom: 5px;
+
+  }
+
+  .footer-para p:last-child {
+    padding-bottom: 0;
+  }
+
+  /* ------------------------------------------------ */
+  /* Animation on scroll  */
+  /* ------------------------------------------------ */
+
+  .js--wp-1,
+  .js--wp-2,
+  .js--wp-3 {
+    opacity: 0;
+  }
+
+  .js--wp-1 animated,
+  .js--wp-2 animated,
+  .js--wp-3 animated {
+    opacity: 1;
+  }
